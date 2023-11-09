@@ -3,7 +3,12 @@ configDotenv(".env")
 const {redisUtils} = require("./database");
 
 const x =async () => {
-  console.log(redisUtils.redisLock(555))
+  let a = await redisUtils.redisLock(555)
+  console.log(a)
+  setTimeout(async ()=>{
+    let b = await redisUtils.redisUnlock(a)
+    console.log(b)
+  },2000)
 }
 
 x()

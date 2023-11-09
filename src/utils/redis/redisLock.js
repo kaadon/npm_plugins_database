@@ -15,3 +15,9 @@ export const redisLock = (resourceKey, ttl = 1000) => {
         redlock().lock(`redlock:${resourceKey}`, ttl).then(r => resolve(r)).catch(() => resolve(false));
     })
 }
+
+export const redisUnlock = (redlockInstance) => {
+    return new Promise(resolve => {
+        redlockInstance.unlock().then(r => resolve(r)).catch(() => resolve(false))
+    })
+}
