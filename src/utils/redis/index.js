@@ -1,1 +1,3 @@
-export * as redisLock from "./redisLock"
+import * as redisLock from "./redisLock"
+
+export default {...redisLock}
