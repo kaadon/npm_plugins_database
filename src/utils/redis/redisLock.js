@@ -18,6 +18,6 @@ export const redisLock = (resourceKey, ttl = 1000) => {
 
 export const redisUnlock = (redlockInstance) => {
     return new Promise(resolve => {
-        redlockInstance.unlock().then(r => resolve(r)).catch(() => resolve(false))
+        redlockInstance.unlock().then(() => resolve(true)).catch(() => resolve(false))
     })
 }
