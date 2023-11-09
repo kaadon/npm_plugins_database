@@ -1,6 +1,6 @@
 {
   "name": "@kaadon.com/database",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "kaadon.com's plugins database",
   "keywords": [
     "kaadon",
@@ -13,15 +13,16 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir database",
-    "test": "yarn build && babel example --out-dir test"
+    "publish": "yarn build; npm publish;exit"
   },
   "files": [
     "/database"
   ],
   "dependencies": {
     "ioredis": "^5.3.2",
-    "mongodb": "^6.1.0",
-    "mysql": "^2.18.1"
+    "mongodb": "6.2.0",
+    "mysql": "^2.18.1",
+    "redlock": "4.2.0"
   },
   "publishConfig": {
     "access": "public"

@@ -31,7 +31,7 @@ class MysqlDB {
                 let connection = mysql.createConnection(databaseConfig())
                 connection.connect(function (err) {
                     if (err) {
-                        reject(new Error(err.sqlMessage))
+                        reject(new Error(err?.sqlMessage))
                         return;
                     }
                     resolve(connection)
@@ -46,11 +46,11 @@ class MysqlDB {
         return new Promise((resolve, reject) => {
             this._connect().then((db) => {
                 db.query(sql, params, function (err, results, fields) {
-                    if (err) reject(new Error(err.sqlMessage));
+                    if (err) reject(new Error(err?.sqlMessage));
                     resolve({results, fields})
                 })
             }).catch(err => {
-                reject(new Error(err.message));
+                reject(err);
             })
         })
     }
