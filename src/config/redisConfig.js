@@ -6,6 +6,7 @@ export function redisConfig(){
         host:redisOptions?.HOST,
         password:redisOptions?.PASSWORD,
         prot:redisOptions?.PORT,
-        db:redisOptions?.DB
+        db:redisOptions?.DB,
+        maxRetriesPerRequest:redisOptions?.MAX_RETRIES_PER_REQUEST,
     }
 }
