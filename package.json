@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir database",
-    "publish": "yarn build; npm publish;exit"
+    "npmPpublish": "yarn build; npm publish;exit"
   },
   "files": [
     "/database"
