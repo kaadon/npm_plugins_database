@@ -206,3 +206,4 @@ Temporary Items
 dist
 /test/
 /.run/
+/package-lock.json

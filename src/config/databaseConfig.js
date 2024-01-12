@@ -8,5 +8,6 @@ export function databaseConfig() {
         database: databaseEnvConfig?.NAME,
         user: databaseEnvConfig?.USER,
         password: databaseEnvConfig?.PWD,
+        connectionLimit: databaseEnvConfig?.CONNECTION_LIMIT,
     }
 }
